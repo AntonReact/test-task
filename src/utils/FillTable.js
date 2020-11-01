@@ -14,23 +14,26 @@ export default class FillTable {
 
     /**
      *
-     * @param {number} [workerIDX]
      * @returns {Promise}
      */
-    _createWorker(workerIDX = 0) {
+    _createWorker() {
         if (this.isPaused) return;
-        if (workerIDX >= this.workers.length) {
+        if (this.pauseIdx >= this.workers.length) {
             const overlay = getOverlayEl();
             overlay.style.visibility = 'hidden';
+            this.pauseIdx = 0;
             return;
         }
-        this.pauseIdx = workerIDX + 1;
-        const worker = this.workers[workerIDX];
+        const worker = this.workers[this.pauseIdx];
+        if (!worker) return;
         const fillWorkerPromise = new Promise((resolve) => {
             const { fill: fillRow } = new FillTableRow({ worker, resolve });
             fillRow();
         });
-        fillWorkerPromise.then(() => this._createWorker(workerIDX + 1));
+        fillWorkerPromise.then(() => {
+            this.pauseIdx++;
+            this._createWorker()
+        });
     }
 
     /**
