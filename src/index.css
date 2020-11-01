@@ -1,0 +1,31 @@
+.fill-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: not-allowed;
+  font-family: 'Roboto';
+}
+
+.fill-overlay__message-container {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f44336;
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+}
+
+.fill-overlay__switch {
+  position: absolute !important;
+  right: 30px;
+}
