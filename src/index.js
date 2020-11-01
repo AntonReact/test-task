@@ -8,7 +8,6 @@ $(window).load(() => {
     $("button.MuiFab-root:contains('Fill')").click(() => {
         const isDialogOpen = !!$('.MuiDialog-container').length;
         if (isDialogOpen) return;
-        console.log('click')
         fillForm();
         fillTable();
     })

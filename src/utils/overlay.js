@@ -13,10 +13,8 @@ export const getOverlayEl = () => document.querySelector(`.${OVERLAY_CLASSNAME}`
  */
 export const renderOverlay = (onButtonClick) => {
   let overlay = getOverlayEl();
-  console.log(overlay);
   if (overlay) {
       overlay.style.visibility = 'visible';
-      console.log(overlay.style);
   } else {
       const btn = document.createElement('button');
       btn.className = 'MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary fill-overlay__switch';
