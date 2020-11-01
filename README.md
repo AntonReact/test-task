@@ -1,6 +1,6 @@
 # TEST TASK
 
-### [Deployed version](https://antonreact.github.io.)
+### [Deployed application](https://avl-test-task.web.app)
 
 <br />
 
